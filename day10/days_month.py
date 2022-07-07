@@ -12,6 +12,13 @@ def is_leap(p_year):
 
 
 def days_in_month(p_year, p_month):
+    """
+    If you enter a year and a month, it returns the days in that month.
+
+    :param p_year: Input year
+    :param p_month: Input month
+    :return: Days in the month
+    """
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     is_leap_year = is_leap(p_year)
     # print(is_leap_year)
