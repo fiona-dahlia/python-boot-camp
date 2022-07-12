@@ -97,7 +97,7 @@ def game():
         user_cards.append(deal_cards())
         computer_cards.append(deal_cards())
 
-    print(f"player cards: {user_cards}, computer cards: {computer_cards}")
+    print(f"player cards: {user_cards}, computer's first card: {computer_cards[0]}")
 
     is_game_over = False
     # Hint 11: The score will need to be rechecked with every new card drawn and the checks in
@@ -108,7 +108,7 @@ def game():
         # then the game ends.
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
-        print(f"user score: {user_score}, computer score: {computer_score}")
+        #print(f"user score: {user_score}, computer score: {computer_score}")
         if computer_score == 0 or user_score == 0 or user_score > 21:
             is_game_over = True
 
@@ -130,9 +130,12 @@ def game():
         computer_score = calculate_score(computer_cards)
         print(f"computer score: {computer_score}")
 
-    compare(user_score, computer_score)
     # Hint 14: Ask the user if they want to restart the game.
     # If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
+    print(f"Your final hand was: {user_cards}")
+    print(f"Computer's final hand was: {computer_cards}")
+    compare(user_score, computer_score)
+
     restart_game = input("Would you like to restart the game? 'y' or 'n': ")
     if restart_game == 'y':
         game()
