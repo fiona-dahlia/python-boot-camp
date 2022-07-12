@@ -1,5 +1,5 @@
 import random
-
+from art import logo
 
 ############### Blackjack Project #####################
 
@@ -86,6 +86,7 @@ def compare(p_user_score, p_computer_score):
 
 
 def game():
+    print(logo)
     # Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
     user_cards = []
     computer_cards = []
@@ -133,6 +134,8 @@ def game():
     # Hint 14: Ask the user if they want to restart the game.
     # If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
     restart_game = input("Would you like to restart the game? 'y' or 'n': ")
+    if restart_game == 'y':
+        game()
 
 
 game()
