@@ -1,19 +1,20 @@
-#Number Guessing Game Objectives:
+# Number Guessing Game Objectives:
 import random
 from art import logo
-lives = -1
+difficulty_levels = {
+    'easy': 10,
+    'hard': 5,
+}
+
 print(logo)
 
 difficulty = input("Do you want to play on 'hard' mode or 'easy' mode?: ")
-
-if difficulty == 'easy':
-    lives = 10
-    print(f"You are playing on easy mode with {lives} lives.")
-else:
-    lives = 5
-    print(f"You are playing on hard mode with {lives} lives.")
+lives = difficulty_levels[difficulty]
+print(f"You are playing on hard mode with {lives} lives.")
 
 answer = random.randint(1, 100)
+
+
 # print(answer)
 
 def guess(correct_number, user_guess):
@@ -23,6 +24,8 @@ def guess(correct_number, user_guess):
         return "Too low."
     else:
         return f"You got it! The answer was {correct_number}."
+
+
 while lives != 0:
     player_guess = int(input("Guess a number between 1, 100: "))
     compare = guess(answer, player_guess)
@@ -37,5 +40,3 @@ while lives != 0:
     elif compare != f"You got it! The answer was {answer}." and lives == 0:
         print("You have no lives left.")
         print("You lost.")
-        
-
